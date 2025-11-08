@@ -10,6 +10,7 @@ Turn your notes (or articles via Obsidian Web Clipper) into an immersive audio e
 - [Features](#features)
 - [Installation](#how-to-install-the-plugin)
 - [Usage](#using-note-reader-read-note-command)
+- [Mobile Battery Optimization](#mobile-battery-optimization)
 - [Settings](#settings)
 - [Commands](#commands)
 - [Screenshots](#screenshots)
@@ -23,7 +24,7 @@ Turn your notes (or articles via Obsidian Web Clipper) into an immersive audio e
 - **Text-to-Speech**: Read notes aloud using online or local system voices.
 - **Controls**: Play/Pause, Rewind 10 seconds, Read active note, Close player.
 - **Progress**: Shows playback progress with seamless chunked audio (Enhanced mode only).
-- **Modes**: Enhanced (full features with highlighting) or Lite (CPU-optimized, no highlighting).
+- **Modes**: Enhanced (full features with highlighting) or Lite (simple, audio-focused option designed for mobile, with no highlighting).
 - **Ribbon Icon**: Optional icon for quick access.
 
 ### Text Processing
@@ -44,7 +45,7 @@ Turn your notes (or articles via Obsidian Web Clipper) into an immersive audio e
 
 ## How to install the plugin
 
-1. **Community Plugins Store (not yet available)**: Open Obsidian, go to Settings → Community plugins → Browse, and search for "Note Reader". Click Install and then Enable.
+1. **Community Plugins Store (not yet available)**: Open Obsidian, go to Settings → Community plugins → Browse, and search for "Note Reader". Select Install and then Enable.
 2. **Manual Installation**: Download the plugin files (`main.js`, `manifest.json`, `styles.css`) from the plugin's GitHub repository. Create a new folder in your Obsidian vault's plugins directory (e.g., `.obsidian/plugins/note-reader`), place the files there, and enable the plugin in Settings → Community plugins.
 
 ## Using Note Reader: Read note command
@@ -59,11 +60,40 @@ Turn your notes (or articles via Obsidian Web Clipper) into an immersive audio e
    - Close: Stop playback and remove the player.
 5. Switch to Active Note: If you switch to another note while listening, use the "Read active note" button to switch playback to the active note; the UI updates to a Loading state immediately while preparing audio.
 
+## Mobile Battery Optimization
+
+To avoid playback stopping on mobile devices, make sure to disable battery optimization for Obsidian:
+
+- On Android, turn off battery optimization for Obsidian in the app settings.
+- On iOS, disable Low Power Mode and enable Background App Refresh for Obsidian.
+
+> **Why:** This permission allows continued playing in the background where otherwise Obsidian gets tombstoned a moment after the screen turns off.
+
+More detailed instructions:
+
+For Android (latest versions like Android 13 and 14):
+
+- Open **Settings**.
+- Go to **Apps & Notifications** > **See all apps** > **Obsidian**.
+- Tap **Battery** or **Battery Optimization**.
+- Select **Battery Optimization** or **Optimize battery usage**.
+- Find Obsidian and set it to **Not optimized** or **Don’t optimize**.
+- Alternatively, search **Battery Optimization** in Settings and exclude Obsidian.
+
+For iOS (iOS 18 or 19):
+
+- Open **Settings** > **Battery**.
+- Turn off **Low Power Mode**.
+- Enable **Background App Refresh** under **Settings** > **General** > **Background App Refresh** for Obsidian.
+- Confirm Obsidian has permission to run in the background.
+
+These steps prevent the system from pausing Obsidian when running in the background or with the screen off, ensuring uninterrupted playback. You may also want to use the reader in Lite mode if you are listening with your screen off as it is an audio-focused implementation and will help preserve battery.
+
 ## Settings
 
 ### Reader Mode
 
-- Choose between Enhanced (with highlighting) or Lite (CPU optimized).
+- Choose between Enhanced (with highlighting) or Lite (audio focused).
 
 ### Content Filters
 
@@ -129,6 +159,8 @@ Plugin settings showing reader mode, content filters, TTS options, highlighting,
 ## Support and Contributing
 
 For support, please check the [GitHub repository](https://github.com/mudnug/note-reader) for issues and discussions.
+
+I plan to make this open source in the future and support custom user themes.
 
 ## Data Security
 
