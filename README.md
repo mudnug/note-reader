@@ -2,72 +2,78 @@
 
 ## Purpose
 
-Turn your notes (or articles via Obsidian Web Clipper) into an immersive audio experience with advanced text-to-speech technology. The plugin supports both online and on-device TTS, offering high-quality, customizable voices, adjustable playback controls, and real-time word highlighting to make reviewing content easier, more accessible, and more engaging.
+Transform your notes (or articles via Obsidian Web Clipper) into an immersive audio experience with advanced text-to-speech technology. Enjoy high-quality customizable voices, real-time word highlighting, and convenient controls. Supports both online and on-device TTS for most devices.
 
 ## Table of Contents
 
 - [Purpose](#purpose)
 - [Features](#features)
 - [Installation](#how-to-install-the-plugin)
-- [Usage](#using-note-reader-read-note-command)
-- [Mobile Battery Optimization](#mobile-battery-optimization)
+- [Usage](#usage)
+- [Mobile battery optimization](#mobile-battery-optimization)
 - [Settings](#settings)
 - [Commands](#commands)
-- [Screenshots](#screenshots)
+- [Data security](#data-security)
 - [Support and Contributing](#support-and-contributing)
-- [Data Security](#data-security)
 
 ## Features
 
-### Player
+### Reader
 
-- **Text-to-Speech**: Read notes aloud using online or local system voices.
-- **Controls**: Play/Pause, Rewind 10 seconds, Read active note, Close player.
-- **Progress**: Shows playback progress with seamless chunked audio (Enhanced mode only).
-- **Modes**: Enhanced (full features with highlighting) or Lite (simple, audio-focused option designed for mobile, with no highlighting).
-- **Ribbon Icon**: Optional icon for quick access.
+- **Text-to-Speech**: Read Obsidian notes aloud using high-quality voices with online (Azure Cognitive Services) or local (Web Speech API) TTS.
+- **Reader Modes**: Enhanced mode with highlighting and progress tracking, and Lite mode for audio-only reading on mobile devices with the screen off.
+- **Media Key Support**: Use keyboard media keys for playback control.
 
 ### Text Processing
 
-- **Content Filtering**: Removes frontmatter, code blocks, tables, headers, inline code, tags, URLs, images, emojis, highlights, asterisks, underscores.
-- **Phrase Filtering**: Exclude lines with custom phrases or stop reading on specific phrases.
+- **Content Filtering**: Skip frontmatter, code blocks, tables, headers, inline code, tags, URLs, images, emojis, highlights, asterisks, underscores, and more.
+- **Phrase Filtering**: Skip lines with custom phrases or stop on specific phrases.
 - **File Name Announcement**: Optionally announce file name before content.
 
-### Highlighting
+### Highlighting (enhanced mode only)
 
-- **Word Highlighting**: Real-time highlighting of spoken words (edit mode only). Research supports word-by-word highlighting for [reading comprehension](https://pmc.ncbi.nlm.nih.gov/articles/PMC7959096/).
-- **Guided Scrolling**: Auto-scroll with highlighting, disables user interaction.
-- **Auto-Clear**: Clears highlights on stop.
+- **Word Highlighting**: Real-time highlighting of spoken words. Research shows word-by-word highlighting improves [reading comprehension](https://pmc.ncbi.nlm.nih.gov/articles/PMC7959096/).
+- **Guided Scrolling**: Auto-scroll to keep highlights visible and prevent editing during reading.
+- **Highlight Themes**: Customizable visual themes for highlighting.
 
-### Audio
-
-- **Completion Chime**: Configurable chime on finish.
+![Note Reader Demo](readme-img/note-reader-demo.gif)
 
 ## How to install the plugin
 
 1. **Community Plugins Store (not yet available)**: Open Obsidian, go to Settings → Community plugins → Browse, and search for "Note Reader". Select Install and then Enable.
-2. **Manual Installation**: Download the plugin files (`main.js`, `manifest.json`, `styles.css`) from the plugin's GitHub repository. Create a new folder in your Obsidian vault's plugins directory (e.g., `.obsidian/plugins/note-reader`), place the files there, and enable the plugin in Settings → Community plugins.
+2. **Manual Installation**: Download the plugin files (`main.js`, `manifest.json`, `styles.css`) from the plugin's GitHub repository. Create a new folder in your Obsidian vault's plugins directory (e.g., `.obsidian/plugins/note-reader`). Place the downloaded files in this folder, then enable the plugin in Settings → Community plugins.
 
-## Using Note Reader: Read note command
+## Usage
 
-1. Open a Note: Open the note you want to listen to.
-2. Assign a Hotkey (Recommended): Go to Settings -> Hotkeys and search for "note reader" to find the command. Assign a hotkey to "Read note".
-3. Run the Command: Trigger the "Read note" command (via hotkey, ribbon icon, or Command Palette). The player appears at the top of the current pane and displays a loading spinner before reading starts.
-4. Control Playback:
-   - Play/Pause: Toggle playback.
-   - Rewind: Jump back 10 seconds.
-   - Read Active Note: Switch playback to the currently active note.
-   - Close: Stop playback and remove the player.
-5. Switch to Active Note: If you switch to another note while listening, use the "Read active note" button to switch playback to the active note; the UI updates to a Loading state immediately while preparing audio.
+To use Note Reader:
+
+1. Open the note you want to listen to in Obsidian.
+
+2. Activate the "Read note" command using one of these methods:
+   - Press the assigned hotkey (if you've set one).
+   - Click the ribbon icon.
+   - Use the Command Palette and search for "Read note".
+
+3. The reader controls will appear at the top of the current pane, showing a loading spinner while preparing the audio.
+
+4. Use the controls to manage Note Reader:
+   - **Play/Pause**: Toggle between reading and pausing the audio.
+   - **Rewind**: Jump back 10 seconds.
+   - **Settings**: Access the plugin settings.
+   - **Close**: Stop reading and hide the reader interface.
+
+5. If you switch to a different note while reading, click "Read Active Note" to restart reading from the beginning of the active note.
+
+To assign a hotkey: Go to Settings → Hotkeys, search for "note reader", and assign a key combination to the "Read note" command.
 
 ## Mobile Battery Optimization
 
-To avoid playback stopping on mobile devices, make sure to disable battery optimization for Obsidian:
+To avoid reader stopping on mobile devices, make sure to disable battery optimization for Obsidian:
 
 - On Android, turn off battery optimization for Obsidian in the app settings.
 - On iOS, disable Low Power Mode and enable Background App Refresh for Obsidian.
 
-> **Why:** This permission allows continued playing in the background where otherwise Obsidian gets tombstoned a moment after the screen turns off.
+> **Why:** This permission allows continued reading in the background. Without it, Note Reader gets stalled shortly after the screen turns off on mobile devices.
 
 More detailed instructions:
 
@@ -87,84 +93,89 @@ For iOS (iOS 18 or 19):
 - Enable **Background App Refresh** under **Settings** > **General** > **Background App Refresh** for Obsidian.
 - Confirm Obsidian has permission to run in the background.
 
-These steps prevent the system from pausing Obsidian when running in the background or with the screen off, ensuring uninterrupted playback. You may also want to use the reader in Lite mode if you are listening with your screen off as it is an audio-focused implementation and will help preserve battery.
+These steps prevent the system from pausing Obsidian when running in the background or with the screen off, ensuring uninterrupted reading. For battery-conscious users, Note Reader Lite mode is recommended when listening with the screen off.
 
 ## Settings
 
-### Reader Mode
+The plugin provides comprehensive settings accessible through Obsidian's settings panel.
 
-- Choose between Enhanced (with highlighting) or Lite (audio focused).
+### Basic Settings
+
+- **Show ribbon icon**: Toggle to display the plugin's icon in the ribbon for quick access.
+- **Reader mode**: Choose between Enhanced (visual progress with highlighting) or Lite (audio focused, designed for mobile).
+- **Hotkey configuration**: Button to switch to the hotkey settings screen to assign shortcuts.
 
 ### Content Filters
 
-- Ignore YAML frontmatter, fenced code blocks, inline code, tags, headers, tables, highlights, images, links, emojis, asterisks, underscores, backslash escapes.
-- Phrase-based filtering: Ignore lines with specific phrases.
+Toggle various filters to exclude content from being read:
+
+- Ignore YAML frontmatter
+- Ignore fenced code blocks
+- Ignore inline code backticks
+- Ignore tags
+- Ignore Markdown header syntax
+- Ignore markdown tables
+- Ignore highlight markers
+- Ignore image embeds and attachments
+- Ignore lines which look like links
+- Ignore emojis
+- Ignore asterisks
+- Ignore backslash escapes
+- Ignore underscores
+
+Additionally, enable phrase line filtering to ignore lines containing specific phrases.
 
 ### Text-to-Speech
 
-- Provider: Online TTS or local system TTS.
-- Voice: Select from available voices.
-- Pitch: Adjust from -50 to 50 Hz.
-- Speed: Adjust from 0.5x to 2.0x.
+- **Provider**: Choose between Online (Azure Cognitive Services) or Local (browser's Web Speech API).
+- **Voice**: Choose from available voices, grouped by locale.
+- **Pitch**: Adjust from -50 to 50 Hz.
+- **Speed**: Adjust from 0.5x to 2.0x.
 
-### Word Highlighting
+### Word Highlighting (Enhanced Mode Only)
 
-- Enable highlighting during playback.
-- Guided scrolling: Auto-scroll with highlighting.
+- **Enable word highlighting**: Highlight words as they are spoken.
+- **Guided scrolling**: Auto-scroll with highlighting and disable user interaction.
+- **Highlight theme**: Select a visual theme for highlighting.
 
 ### Reading Behavior
 
-- Read file name before document.
-- Behavior on repeated commands: Pause/play, stop/start, reload.
+- **Read file name before document**: Announce the file name before content.
+- **Repeat command behavior** (Enhanced Mode Only): Choose what happens when you use the 'read note' command again while reading - pause/play, stop/start, or reload from beginning.
 
-### Completion Behavior
+### Reading Completion Behavior
 
-- Play chime on finish.
-- Auto-close player on completion.
-- Stop on specific phrase.
+- **Play chime**: Play a sound when reading finishes.
+- **Automatically close player**: Close the reader UI on completion.
+- **Stop reading phrase**: Stop reading when a specific phrase is found on its own line.
 
 ### Troubleshooting
 
-- Buffer ahead target.
-- Auto-read on load.
-- Debug logging.
+- **Target buffer ahead**: Set buffer size in seconds.
+- **Read active note on load**: Automatically start reading on plugin load.
+- **Enable debug logging**: Verbose logging for debugging.
 
 ### Statistics
 
-- View and reset usage counters.
+View usage statistics and reset counters.
 
 ## Commands
 
-- **Read note**: Reads the active note.
-- **Read selected text**: Reads selected text or active note if none selected.
-- **Restart playback**: Restarts from beginning.
+- **Read note or selected text**: Reads the active note or selected text if available.
+- **Reload active note**: Reloads the active note.
 - **Rewind 10 seconds**: Rewinds by 10 seconds.
 - **Toggle (pause or play)**: Toggles play/pause.
-- **Close playback bar**: Closes the player.
+- **Stop and close**: Stops and closes the reader.
 
-## Screenshots
+## Data Security
 
-### Playback Demo
+The TTS system has two modes:
 
-Shows the player in action with controls, progress bar, and highlighting.
-
-![Playback Demo](readme-img/note-reader-playback-demo.gif)
-
-### Settings Panel
-
-Plugin settings showing reader mode, content filters, TTS options, highlighting, and other configuration settings.
-
-![Settings Panel](readme-img/note-reader-settings.png)
+- **Local mode**: Uses the browser's Web Speech API (speechSynthesis) for client-side TTS, processing everything locally without sending data to external servers. This API may not be available on all platforms, including some Android devices.
+- **Online mode**: Uses Azure Cognitive Services, which sends text and a token to Microsoft servers for processing. All data transfers are encrypted and data is deleted immediately after processing. See their [data policy](https://learn.microsoft.com/en-us/azure/ai-foundry/responsible-ai/speech-service/text-to-speech/data-privacy-security?tabs=custom-neural-voice) for more details.
 
 ## Support and Contributing
 
 For support, please check the [GitHub repository](https://github.com/mudnug/note-reader) for issues and discussions.
 
-I plan to make this open source in the future and support custom user themes.
-
-## Data Security
-
-The system has two modes:
-
-- **Local mode**: Uses the browser's Web Speech API (speechSynthesis) for client-side TTS, processing everything locally without sending data to external servers.
-- **Online mode**: Uses Azure Cognitive Services via the Edge TTS library, which sends text and a token to Microsoft servers for processing, with encrypted transfers and immediate deletion of data. See their [data policy](https://learn.microsoft.com/en-us/azure/ai-foundry/responsible-ai/speech-service/text-to-speech/data-privacy-security?tabs=custom-neural-voice) for more details.
+A future release will make this project open source, with potential support for custom user themes and additional voices.
