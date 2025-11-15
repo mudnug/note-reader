@@ -1,0 +1,10 @@
+{
+	"id": "note-reader",
+	"name": "Note Reader",
+	"version": "1.0.0",
+	"minAppVersion": "1.6.6",
+	"description": "Provides text-to-speech (TTS) for notes or clipped articles by reading them aloud while highlighting words. Offers on-device and online TTS.",
+	"author": "m",
+	"authorUrl": "https://github.com/mudnug",
+	"isDesktopOnly": false
+}
