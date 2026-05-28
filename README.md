@@ -143,7 +143,7 @@ Additionally, enable phrase line filtering to ignore lines containing specific p
 ### Word Highlighting (Enhanced Mode Only)
 
 - **Enable word highlighting**: Highlight words as they are spoken.
-- **Guided scrolling**: Auto-scroll with highlighting and disable user interaction.
+- **Locked scrolling**: Auto-scroll with highlighting and disable user interaction.
 - **Scroll to highlight position on pause**: When paused, automatically scroll to the current highlight position.
 - **Highlight theme**: Select a visual theme for highlighting.
 - **Custom themes**: Create and manage your own highlight themes.
@@ -180,7 +180,8 @@ The plugin provides the following commands accessible via the Command Palette (`
 
 ### Core Reading Commands
 
-- **Read note or selected text**: Reads the active note aloud. If text is selected, reads only the selection. Otherwise, reads the entire note.
+- **Read note or selected text**: Reads the active note aloud. If text is selected, reads only the selection. Otherwise, reads the entire note from the top (or from the persisted position if available).
+  **Read from selected text**: Reads only the currently selected text. Only available when text is selected.
 - **Start reading from cursor**: Begins reading from the current cursor position in the active note.
 - **Reload active note**: Reloads and restarts reading of the currently active note from the beginning.
 
@@ -220,4 +221,4 @@ The TTS system has two modes:
 
 ## Support and Contributing
 
-For support, please check the [GitHub repository](https://github.com/mudnug/note-reader) for issues and discussions. There are plans to make the repo open source in the future.
+For support, please check the [GitHub repository](https://github.com/mudnug/note-reader) for issues and discussions.
