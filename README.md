@@ -10,7 +10,6 @@ Transform your notes (or articles via Obsidian Web Clipper) into an immersive au
 - [Features](#features)
 - [Installation](#how-to-install-the-plugin)
 - [Usage](#usage)
-- [Mobile battery optimization](#mobile-battery-optimization)
 - [Settings](#settings)
 - [Commands](#commands)
 - [Data security](#data-security)
@@ -41,8 +40,6 @@ Transform your notes (or articles via Obsidian Web Clipper) into an immersive au
 
 ## How to install the plugin
 
-[![Open in Obsidian](https://custom-icon-badges.demolab.com/badge/-Open%20In%20Obsidian-d4d4d4?style=for-the-badge&logo=obsidian-full)](obsidian://show-plugin?id=note-reader)
-
 1. **Community Plugins Store**: Open Obsidian, go to Settings → Community plugins → Browse, and search for "Note Reader". If available, select Install and then Enable. (Note: Plugin approval is taking several months, so if not found, use manual installation below.)
 2. **Manual Installation**: Download the plugin files (`main.js`, `manifest.json`, `styles.css`) from the plugin's GitHub repository. Create a new folder in your Obsidian vault's plugins directory (e.g., `.obsidian/plugins/note-reader`). Place the downloaded files in this folder, then enable the plugin in Settings → Community plugins.
 
@@ -68,35 +65,6 @@ To use Note Reader:
 5. If you switch to a different note while reading, click "Read Active Note" to restart reading from the beginning of the active note.
 
 To assign a hotkey: Go to Settings → Hotkeys, search for "note reader", and assign a key combination to the "Read note" command.
-
-## Mobile Battery Optimization
-
-To avoid reader stopping on mobile devices, make sure to disable battery optimization for Obsidian:
-
-- On Android, turn off battery optimization for Obsidian in the app settings.
-- On iOS, disable Low Power Mode and enable Background App Refresh for Obsidian.
-
-> **Why:** This permission allows continued reading in the background. Without it, Note Reader gets stalled shortly after the screen turns off on mobile devices.
-
-More detailed instructions:
-
-For Android (latest versions like Android 13 and 14):
-
-- Open **Settings**.
-- Go to **Apps & Notifications** > **See all apps** > **Obsidian**.
-- Tap **Battery** or **Battery Optimization**.
-- Select **Battery Optimization** or **Optimize battery usage**.
-- Find Obsidian and set it to **Not optimized** or **Don’t optimize**.
-- Alternatively, search **Battery Optimization** in Settings and exclude Obsidian.
-
-For iOS (iOS 18 or 19):
-
-- Open **Settings** > **Battery**.
-- Turn off **Low Power Mode**.
-- Enable **Background App Refresh** under **Settings** > **General** > **Background App Refresh** for Obsidian.
-- Confirm Obsidian has permission to run in the background.
-
-These steps prevent the system from pausing Obsidian when running in the background or with the screen off, ensuring uninterrupted reading. For battery-conscious users, Note Reader Lite mode is recommended when listening with the screen off.
 
 ## Settings
 
