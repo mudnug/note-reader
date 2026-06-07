@@ -49,10 +49,10 @@ To use Note Reader:
 
 1. Open the note you want to listen to in Obsidian.
 
-2. Activate the "Read note" command using one of these methods:
+2. Activate the "Read note from top" command using one of these methods:
     - Press the assigned hotkey (if you've set one).
     - Click the ribbon icon.
-    - Use the Command Palette and search for "Read note".
+    - Use the Command Palette and search for "Read note from top".
 
 3. The reader controls will appear at the top of the current pane, showing a loading spinner while preparing the audio.
 
@@ -62,9 +62,9 @@ To use Note Reader:
     - **Settings**: Access the plugin settings.
     - **Close**: Stop reading and hide the reader interface.
 
-5. If you switch to a different note while reading, click "Read Active Note" to restart reading from the beginning of the active note.
+5. If you switch to a different note while reading, use the "Reload active note" command to restart reading from the beginning of the active note.
 
-To assign a hotkey: Go to Settings → Hotkeys, search for "note reader", and assign a key combination to the "Read note" command.
+To assign a hotkey: Go to Settings → Hotkeys, search for "note reader", and assign a key combination to the "Read note from top" command.
 
 ## Settings
 
@@ -148,9 +148,9 @@ The plugin provides the following commands accessible via the Command Palette (`
 
 ### Core Reading Commands
 
-- **Read note or selected text**: Reads the active note aloud. If text is selected, reads only the selection. Otherwise, reads the entire note from the top (or from the persisted position if available).
-  **Read from selected text**: Reads only the currently selected text. Only available when text is selected.
-- **Start reading from cursor**: Begins reading from the current cursor position in the active note.
+- **Read note from top**: Reads the document from the beginning. If text is selected, reads only the selected portion (from the start of the selection to the cursor/selection end). Otherwise, reads the entire note from the top (or from the persisted position if enabled).
+  - **Start reading from cursor**: Begins reading from the current cursor position in the active note.
+  - **Read from selected text**: Reads only the currently selected text. Only available when text is selected.
 - **Reload active note**: Reloads and restarts reading of the currently active note from the beginning.
 
 ### Playback Control Commands
