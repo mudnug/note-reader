@@ -23,6 +23,7 @@ Transform your notes (or articles via Obsidian Web Clipper) into an immersive au
 - **Reader Modes**: Enhanced mode with highlighting and progress tracking, and Lite mode for audio-only reading on mobile devices with the screen off.
 - **Media Key Support**: Use keyboard media keys for playback control.
 - **Resume Position**: Automatically remember and resume reading position (if enabled).
+- **Jump to Position**: Hover over any line in the editor while reading to reveal a play icon; click it to start reading from that exact line.
 
 ### Text Processing
 
