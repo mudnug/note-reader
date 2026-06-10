@@ -84,6 +84,7 @@ Toggle various filters to exclude content from being read:
 - Ignore YAML frontmatter
 - Ignore fenced code blocks
 - Ignore inline code backticks
+- Ignore blockquotes
 - Ignore tags
 - Ignore Markdown header syntax
 - Ignore markdown tables
@@ -95,7 +96,7 @@ Toggle various filters to exclude content from being read:
 - Ignore backslash escapes
 - Ignore underscores
 
-Additionally, enable phrase line filtering to ignore lines containing specific phrases.
+Additionally, enable phrase line filtering to ignore lines containing specific phrases, and prefix line filtering to skip lines that start with a specific prefix.
 
 ### Text-to-Speech
 
