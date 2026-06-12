@@ -1,0 +1,114 @@
+name: Bug report
+description: Document a bug in note-reader
+labels: ["type: bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Before you start
+
+        Thanks for taking the time to report a bug in **note-reader**!
+
+        To help us reproduce and fix the issue quickly, please:
+
+        - Make sure you’re using the **latest version of note-reader**.
+        - Include **clear steps to reproduce** and any relevant error messages.
+
+  - type: checkboxes
+    id: no-invalid-issues
+    attributes:
+      label: "Verify your issue is in the right place"
+      description: "This repository is only for the note-reader plugin, not the Obsidian app itself."
+      options:
+        - label: "My request is about the note-reader plugin for Obsidian (not core Obsidian or another plugin)."
+          required: true
+        - label: "I have tested with the latest released version of the note-reader plugin."
+          required: true
+
+  - type: checkboxes
+    id: no-duplicate-issues
+    attributes:
+      label: "⚠️ Check that this issue hasn't been reported already"
+      description: "A quick search through existing bug reports can save everyone time."
+      options:
+        - label: "I searched existing note-reader bug reports and didn’t find a similar issue."
+          required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: |
+        What exact steps can we follow to reproduce the issue?
+
+        The more specific you are, the easier it is for us to track down the problem.
+        Please include any relevant content as text, so we can copy and test it.
+      placeholder: |
+        Example:
+
+        1. Launch Obsidian Sandbox via the `Open Sandbox Vault` command.
+        2. Install the note-reader plugin.
+        4. Create a new note called `Demo problem`.
+        5. Paste in a task with the text `- [x] Some special problem text`.
+        6. Attempt to switch to Reading mode.
+        5. Observe that ...
+
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: Tell us what you expected to happen when following the steps above.
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Actual behavior
+      description: |
+        Tell us what actually happens instead of the expected behavior.
+        Screenshots or short screen recordings are very helpful if you can provide them.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: operating-systems
+    attributes:
+      label: Which operating systems are you using?
+      description: You can select more than one option if applicable.
+      options:
+        - label: Linux
+        - label: macOS
+        - label: Windows
+    validations:
+      required: true
+
+
+
+  - type: input
+    id: note-reader-version
+    attributes:
+      label: note-reader plugin version
+      description: Which note-reader version are you using?
+      placeholder: "1.0.0"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: other-plugins-disabled
+    attributes:
+      label: Plugin conflict check
+      description: This helps us see if the problem is caused by an interaction with another plugin.
+      options:
+        - label: I tried with all other community plugins disabled, and the issue still occurs.
+          required: false
+
+  - type: textarea
+    id: possible-solution
+    attributes:
+      label: Possible solution (optional)
+      description: |
+        Optional: If you have any ideas about what might be causing the bug or how to fix it, please share them here.

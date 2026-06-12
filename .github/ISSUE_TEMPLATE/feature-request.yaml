@@ -1,0 +1,65 @@
+name: Feature request
+description: Suggest a new feature or improvement for note-reader
+labels: ["type: enhancement"]
+body:
+  - type: checkboxes
+    id: no-invalid-issues
+    attributes:
+      label: "⚠️ Verify your request is in the right place"
+      description: "This repository is only for the note-reader plugin, not the Obsidian app itself."
+      options:
+        - label: "My request is about the note-reader plugin for Obsidian (not core Obsidian or another plugin)."
+          required: true
+        - label: "I am only requesting a single feature or change in this issue. I will open separate requests for unrelated ideas."
+          required: true
+        - label: "I believe this feature would be useful to other note-reader users, not just for my very specific personal workflow."
+          required: true
+
+  - type: checkboxes
+    id: no-duplicate-issues
+    attributes:
+      label: "⚠️ Please check that this feature hasn’t been suggested already"
+      description: "A quick search through existing feature requests helps avoid duplicates."
+      options:
+        - label: "I searched existing note-reader enhancement issues and did not find a similar request."
+          required: true
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: "🔖 Feature description"
+      description: |
+        Describe what you’re trying to accomplish or what’s difficult today.
+        Focus on your goal or pain point, not the solution or UI details.
+      placeholder: "When I try to..., I run into..., which makes it hard to..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: "✔️ How it should work"
+      description: |
+        Explain what you want to happen and why it would help your workflow.
+        Focus on what the feature should do rather than how it should be implemented.
+      placeholder: "In my use case, this would let me ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "❓ Alternatives you’ve considered"
+      description: "Have you tried any workarounds or other approaches? If so, describe them here."
+      placeholder: "I have considered ..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: "📝 Additional context"
+      description: "Add any other context, examples, or screenshots that help explain your request."
+      placeholder: "For example, a screenshot of your current workflow, or a short note showing where this would fit."
+    validations:
+      required: false
