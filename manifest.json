@@ -1,7 +1,7 @@
 {
 	"id": "note-reader",
 	"name": "Note Reader",
-	"version": "1.5.3",
+	"version": "1.6.0",
 	"minAppVersion": "1.11.0",
 	"description": "Provides text-to-speech (TTS) for notes or clipped articles by reading them aloud while highlighting words. Offers on-device and online voice providers.",
 	"author": "m",

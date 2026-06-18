@@ -142,7 +142,9 @@ Additionally, enable phrase line filtering to ignore lines containing specific p
 
 ### Statistics
 
-View usage statistics and reset counters.
+#### Statistics storage modes
+- **Sync across devices (plugin storage):** Stores counters in the plugin's settings so they will be included when you sync your vault (e.g., via Obsidian Sync or other vault-syncing solutions).
+- **Local device only (browser storage):** Stores counters in the browser/localStorage for the current device only; these values are not synced across devices.
 
 ## Commands
 
