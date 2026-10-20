@@ -95,6 +95,7 @@ Toggle various filters to exclude content from being read:
 - Ignore asterisks
 - Ignore backslash escapes
 - Ignore underscores
+- Ignore footnote references (e.g. `[^1]`)
 
 Additionally, enable phrase line filtering to ignore lines containing specific phrases, and prefix line filtering to skip lines that start with a specific prefix.
 
